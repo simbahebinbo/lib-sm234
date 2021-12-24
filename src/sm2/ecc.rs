@@ -229,7 +229,7 @@ impl EccCtx {
 
         match self.new_point(&x, &y) {
             Ok(p) => p,
-            Err(m) => panic!(m),
+            Err(m) => panic!("{}", m),
         }
     }
 
@@ -262,7 +262,7 @@ impl EccCtx {
 
         match self.new_jacobian(&p.x, &neg_y, &p.z) {  //判断是否为雅克比坐标点
             Ok(neg_p) => neg_p,
-            Err(e) => panic!(e),
+            Err(e) => panic!("{}", e),
         }
     }
 
